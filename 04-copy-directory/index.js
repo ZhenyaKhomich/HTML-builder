@@ -10,9 +10,9 @@ async function copy() {
     const files = await fs.readdir(pathFiles);
 
     for (const file of files) {
-      const pathFile = path.join(copyFiles, file);
+      const pathFile = path.join(pathFiles, file);
       const newFile = path.join(copyFiles, file);
-      await fs.copyFile(srcFile, newFile);
+      await fs.copyFile(pathFile, newFile);
     }
 
     console.log('Directory copied successfully!');

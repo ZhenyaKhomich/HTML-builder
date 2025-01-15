@@ -23,6 +23,9 @@ fs.readdir(
 function newFileStats(filePath, file) {
   fs.stat(filePath, (el, stats) => {
     if (el) return console.error(el.message);
-    console.log(`${file.name} - ${path.extname(file.name)} - ${stats.size}`);
+    let examp = file.name.split('.');
+    console.log(
+      `${examp[0]} - ${examp[1]} - ${(stats.size / 1024).toFixed(3)}kb.`,
+    );
   });
 }

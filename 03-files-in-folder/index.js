@@ -23,9 +23,13 @@ fs.readdir(
 function newFileStats(filePath, file) {
   fs.stat(filePath, (el, stats) => {
     if (el) return console.error(el.message);
+
     let examp = file.name.split('.');
+    let format = examp.pop();
+    let name = examp.join('.');
+
     console.log(
-      `${examp[0]} - ${examp[1]} - ${(stats.size / 1024).toFixed(3)}kb.`,
+      `${name} - ${format} - ${(stats.size / 1024).toFixed(3)}kb.`,
     );
   });
 }

@@ -7,7 +7,7 @@ const write = fs.createWriteStream(path.join(__dirname, 'text.txt'), {
 console.log('Welcome, enter your text');
 
 process.stdin.on('data', (data) => {
-  const userDate = data.toString().trim();
+  const userDate = `${data.toString().trim()}\n`;
   if (userDate === 'exit') {
     write.end();
     process.exit();

@@ -8,7 +8,7 @@ console.log('Welcome, enter your text');
 
 process.stdin.on('data', (data) => {
   const userDate = `${data.toString().trim()}\n`;
-  if (userDate === 'exit') {
+  if (userDate === 'exit\n') {
     write.end();
     process.exit();
   }
